@@ -1,0 +1,10 @@
+Thumbs.db
+*.csproj.user
+*.suo
+
+node_modules
+bower_components
+typings
+
+/bin
+/obj

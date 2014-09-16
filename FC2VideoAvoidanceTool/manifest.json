@@ -1,0 +1,28 @@
+{
+    "name": "__MSG_extName__",
+    "description": "__MSG_extDescription__",
+    "icons": {
+        "128": "assets/icons/icon128.png",
+        "48": "assets/icons/icon48.png"
+    },
+    "default_locale": "ja",
+    "version": "1.0.0.0",
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "vendor/js/bower_concat.js",
+            "vendor/js/md5.js",
+            "background/js/ginfo.js"
+        ]
+    },
+    "content_scripts": [
+    ],
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "*://video.fc2.com/*"
+    ],
+    "web_accessible_resources": [
+        "**/*.map"
+    ]
+}
