@@ -11,9 +11,10 @@ FC2 Video Avoidance Tool
 * [Grunt](http://gruntjs.com)
 * [Bower](http://bower.io)
 * [tsd](http://definitelytyped.org/tsd/)
+
 <!--
 * [Travis CI](https://travis-ci.org)
-* -->
+-->
 
 ## Used library
 * [Underscore.js](http://underscorejs.org)
