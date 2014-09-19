@@ -65,9 +65,9 @@ module.exports = (grunt) ->
             main:
                 files: [
                     pkg.name + '/**/*.png'
-                    pkg.name + '/manifest.json'
                     pkg.name + '/**/*.js'
                     pkg.name + '/**/*.css'
+                    pkg.name + '/_locales/**/*.json'
                     ]
                 tasks: ['copy:main']
             
