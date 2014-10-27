@@ -1,8 +1,6 @@
 FC2 Video Avoidance Tool
 ==================
-<!--
-[![Build Status](https://travis-ci.org/shizuku613/NosubDownloader.svg?branch=master)](https://travis-ci.org/shizuku613/NosubDownloader)
--->
+[![Build Status](https://travis-ci.org/shizuku613/FC2VideoAvoidanceTool.svg?branch=master)](https://travis-ci.org/shizuku613/FC2VideoAvoidanceTool)
 
 ## Development environment
 * TypeScript
@@ -11,10 +9,7 @@ FC2 Video Avoidance Tool
 * [Grunt](http://gruntjs.com)
 * [Bower](http://bower.io)
 * [tsd](http://definitelytyped.org/tsd/)
-
-<!--
 * [Travis CI](https://travis-ci.org)
--->
 
 ## Used library
 * [Underscore.js](http://underscorejs.org)
@@ -50,4 +45,4 @@ grunt test
 
 ## License
 * MIT License
-* Copyright (c) 2014 KONO Shizuku
+* Copyright (c) 2014 Shizuku Kono
