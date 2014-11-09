@@ -164,6 +164,6 @@
     "LintOnBuild": true,
     "LintOnSave": true,
     "LintResultLocation": "Message",
-    "ShowPreviewPane": true
+    "ShowPreviewPane": false
   }
 }
