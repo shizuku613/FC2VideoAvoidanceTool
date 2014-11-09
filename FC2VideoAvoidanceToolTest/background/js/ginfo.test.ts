@@ -3,6 +3,7 @@
 /// <reference path="../../../typings/mocha/mocha.d.ts" />
 /// <reference path="../../../typings/chai/chai.d.ts" />
 /// <reference path="../../../typings/md5/md5.d.ts" />
+/// <reference path="../../../typings/chrome/chrome.d.ts" />
 
 import vm = require('vm');
 import fs = require('fs');
@@ -14,6 +15,10 @@ import chai = require('chai');
 
 var EventEmitter = events.EventEmitter;
 var expect = chai.expect;
+
+interface OnBeforeRequestCallback {
+    (details: { url: string }): { [key: string]: any };
+}
 
 /**
  * ライブラリ CybozuLabs.MD5 を文字列から読み込む
@@ -37,7 +42,7 @@ var md5 = requireMd5(fs.readFileSync(path.join(base, 'vendor/js/md5.js'), 'utf-8
 
 // Chrome Extension API のモック (利用部分のみ)
 var chromeEvents = new EventEmitter();
-var chrome = {
+var chromeMock = {
     webRequest: {
         onBeforeRequest: {
             addListener: function () {
@@ -55,7 +60,7 @@ describe('ginfo.ts', () => {
         context = {
             _: _,
             CybozuLabs: md5,
-            chrome: chrome,
+            chrome: chromeMock,
             console: console
         }
     });
@@ -77,8 +82,8 @@ describe('ginfo.ts', () => {
 
     // リダイレクトが行われているか
     it('redirect is running', () => {
-        var callback = null;
-        chromeEvents.on('onBeforeRequest', (callback_) => {
+        var callback: OnBeforeRequestCallback = null;
+        chromeEvents.on('onBeforeRequest', (callback_: OnBeforeRequestCallback) => {
             callback = callback_;
         });
 
@@ -93,8 +98,8 @@ describe('ginfo.ts', () => {
 
     // 不正な URL でリダイレクトが行われていないか
     it('redirect isn\'t running with wrong url', () => {
-        var callback = null;
-        chromeEvents.on('onBeforeRequest', (callback_) => {
+        var callback: OnBeforeRequestCallback = null;
+        chromeEvents.on('onBeforeRequest', (callback_: OnBeforeRequestCallback) => {
             callback = callback_;
         });
 
@@ -109,8 +114,8 @@ describe('ginfo.ts', () => {
 
     // リダイレクト URL が正しいかどうか調べる
     it('redirect url is valid', () => {
-        var callback = null;
-        chromeEvents.on('onBeforeRequest', (callback_) => {
+        var callback: OnBeforeRequestCallback = null;
+        chromeEvents.on('onBeforeRequest', (callback_: OnBeforeRequestCallback) => {
             callback = callback_;
         });
 

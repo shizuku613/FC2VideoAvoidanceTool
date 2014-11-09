@@ -21,12 +21,17 @@ module.exports = (grunt) ->
         typescript:
             main:
                 src: [pkg.name + '/**/*.ts']
-                options:
-                    target: 'es5'
-                    sourceMap: false
-                    declaration: false
-                    noImplicitAny: true
-                    comments: true
+            
+            test:
+                src: [pkg.name + 'Test/**/*.ts']
+            
+            options:
+                module: 'commonjs'
+                target: 'es5'
+                sourceMap: false
+                declaration: false
+                noImplicitAny: true
+                comments: true
         
         copy:
             main:
@@ -82,7 +87,7 @@ module.exports = (grunt) ->
     require('load-grunt-tasks')(grunt)
     
     grunt.registerTask 'default', [
-        'typescript'
+        'typescript:main'
         'bower_concat'
         'copy'
         'json5_to_json'
@@ -90,7 +95,7 @@ module.exports = (grunt) ->
         ]
     
     grunt.registerTask 'build', [
-        'typescript'
+        'typescript:main'
         'bower_concat'
         'copy'
         'json5_to_json'
@@ -100,6 +105,7 @@ module.exports = (grunt) ->
     
     grunt.registerTask 'test', [
         'build'
+        'typescript:test'
         ]
     
     grunt.registerTask 'create_empty_debug', ->
