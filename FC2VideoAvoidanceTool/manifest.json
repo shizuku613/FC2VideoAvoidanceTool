@@ -12,6 +12,7 @@
         "scripts": [
             "vendor/js/bower_concat.js",
             "vendor/js/md5.js",
+            "debug.js",
             "background/js/ginfo.js"
         ]
     },

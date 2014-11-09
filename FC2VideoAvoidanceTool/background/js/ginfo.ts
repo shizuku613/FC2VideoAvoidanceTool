@@ -42,7 +42,7 @@ module fc2.video.background {
             var newUrl = getVideoInfoUrl(vid);
 
             if (typeof DEBUG !== 'undefined') {
-                console.log(newUrl);
+                console.log(details.url, newUrl);
             }
 
             return { redirectUrl: newUrl };

@@ -3,7 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <ProjectGuid>{1B2398BD-A942-4DD4-A2F5-2FAB3A9BD96E}</ProjectGuid>
+    <ProjectGuid>{A47F2239-BE66-4AC2-B276-4C91DACD04C8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <OutputPath>bin</OutputPath>
@@ -41,7 +41,6 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties manifest_1json__JSONSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
@@ -49,23 +48,12 @@
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="background\css\" />
     <Folder Include="content_scripts\css\" />
     <Folder Include="content_scripts\js\" />
     <Folder Include="typings\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\icons\icon128.png" />
-    <Content Include="assets\icons\icon48.png" />
-    <Content Include="vendor\js\md5.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="_locales\ja\messages.json" />
-    <Content Include="manifest.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="background\js\ginfo.ts" />
-    <TypeScriptCompile Include="debug.ts" />
+    <TypeScriptCompile Include="background\js\ginfo.test.ts" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
