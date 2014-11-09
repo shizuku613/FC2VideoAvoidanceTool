@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha \"FC2VideoAvoidanceToolTest/**/*.test.js\""
+    "test": "mocha FC2VideoAvoidanceToolTest --recursive"
   },
   "author": "",
   "license": "MIT",
